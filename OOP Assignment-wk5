@@ -1,0 +1,45 @@
+//Activity 1//
+# Base class
+class Superhero:
+    def __init__(self, name, power, origin):
+        self.name = name
+        self.power = power
+        self.origin = origin
+
+    def introduce(self):
+        print(f"I am {self.name} from {self.origin}, and my power is {self.power}.")
+
+    def use_power(self):
+        print(f"{self.name} uses {self.power}!")
+
+# Subclass with encapsulation
+class FlyingHero(Superhero):
+    def __init__(self, name, power, origin, altitude_limit):
+        super().__init__(name, power, origin)
+        self.__altitude_limit = altitude_limit  # private attribute
+
+    def fly(self):
+        print(f"{self.name} is flying up to {self.__altitude_limit} meters!")
+
+    def get_altitude_limit(self):
+        return self.__altitude_limit
+
+//Activity 2//
+
+class Vehicle:
+    def move(self):
+        print("The vehicle moves.")
+
+class Car(Vehicle):
+    def move(self):
+        print("Driving 🚗")
+
+class Plane(Vehicle):
+    def move(self):
+        print("Flying ✈️")
+
+class Boat(Vehicle):
+    def move(self):
+        print("Sailing 🚤")
+
+
