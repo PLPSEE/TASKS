@@ -1,0 +1,20 @@
+with open('original.txt', 'r') as infile:
+    data = infile.read()
+
+modified_data = data.upper()  # Example modification
+
+with open('modified.txt', 'w') as outfile:
+    outfile.write(modified_data)
+
+filename = input("Enter the filename: ")
+
+try:
+    with open(filename, 'r') as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("Error: File not found.")
+except PermissionError:
+    print("Error: You don't have permission to read this file.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
